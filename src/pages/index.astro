@@ -1,11 +1,172 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="QIPI | Digitalizar la Confianza">
+	<Navbar />
+	
+	<main class="overflow-hidden">
+		<!-- Hero Section -->
+		<section class="relative min-h-[90vh] flex items-center justify-center bg-gradient-to-br from-qipi-white-2 via-qipi-light-blue/20 to-qipi-white-2 pt-16">
+			<div class="absolute inset-0 z-0 opacity-30">
+				<div class="absolute top-20 left-10 w-72 h-72 bg-qipi-light-blue rounded-full filter blur-3xl opacity-40 animate-pulse"></div>
+				<div class="absolute bottom-20 right-10 w-96 h-96 bg-qipi-blue-slate rounded-full filter blur-3xl opacity-20"></div>
+			</div>
+			
+			<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+				<span class="inline-block py-1 px-3 rounded-full bg-qipi-light-blue/30 text-qipi-blue-slate text-sm font-semibold mb-6 backdrop-blur-sm border border-qipi-light-blue/50">
+					Innovación Rural
+				</span>
+				<h1 class="text-5xl md:text-7xl font-extrabold font-qipi text-qipi-ink-black mb-6 leading-tight tracking-tight">
+					Digitalizar la <span class="text-transparent bg-clip-text bg-gradient-to-r from-qipi-blue-slate to-qipi-ink-black">Confianza</span>
+				</h1>
+				<p class="mt-4 text-xl text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed">
+					"La Confianza es el Nuevo Capital."<br>
+					Transformamos la reciprocidad y autogestión de comunidades rurales en capital productivo.
+				</p>
+				<div class="flex flex-col sm:flex-row gap-4 justify-center">
+					<a href="/grow-funding" class="px-8 py-4 bg-qipi-ink-black text-white rounded-full font-semibold text-lg shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 group">
+						Campaña Aquí Nace
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+						</svg>
+					</a>
+					<a href="#propuesta" class="px-8 py-4 bg-white text-qipi-ink-black border border-gray-200 rounded-full font-semibold text-lg shadow-sm hover:shadow-md hover:bg-gray-50 transition-all duration-300">
+						Conocer Más
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Propuesta de Valor Section -->
+		<section id="propuesta" class="py-24 bg-white">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center mb-16">
+					<h2 class="text-3xl md:text-4xl font-bold text-qipi-ink-black mb-4">La Red de Confianza</h2>
+					<p class="text-lg text-gray-500 max-w-3xl mx-auto">
+						Somos la infraestructura financiera cooperativa que conecta a diversos actores para construir una economía ética y transparente.
+					</p>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+					<!-- Card 1: Capital Local -->
+					<div class="bg-qipi-white-2 p-8 rounded-2xl border border-gray-100 hover:border-qipi-light-blue hover:shadow-xl transition-all duration-300 group">
+						<div class="w-14 h-14 bg-qipi-light-blue/30 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+							<svg class="w-8 h-8 text-qipi-ink-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+						</div>
+						<h3 class="text-xl font-bold text-qipi-ink-black mb-3">Capital Local</h3>
+						<p class="text-sm text-gray-600 mb-4 font-semibold">Socios Locales</p>
+						<p class="text-sm text-gray-500 leading-relaxed">
+							De la exclusión a la autogestión. Integración a una cooperativa de cooperativas con acceso a crédito justo y ahorro seguro.
+						</p>
+					</div>
+
+					<!-- Card 2: Capital Aliado -->
+					<div class="bg-qipi-white-2 p-8 rounded-2xl border border-gray-100 hover:border-qipi-light-blue hover:shadow-xl transition-all duration-300 group">
+						<div class="w-14 h-14 bg-green-100/50 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+							<svg class="w-8 h-8 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+						</div>
+						<h3 class="text-xl font-bold text-qipi-ink-black mb-3">Capital Aliado</h3>
+						<p class="text-sm text-gray-600 mb-4 font-semibold">Inversionistas Éticos</p>
+						<p class="text-sm text-gray-500 leading-relaxed">
+							Tu dinero despierta e impacta. Inversión ética que crece al ritmo de las comunidades rurales.
+						</p>
+					</div>
+
+					<!-- Card 3: Capital de Impacto -->
+					<div class="bg-qipi-white-2 p-8 rounded-2xl border border-gray-100 hover:border-qipi-light-blue hover:shadow-xl transition-all duration-300 group">
+						<div class="w-14 h-14 bg-yellow-100/50 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+							<svg class="w-8 h-8 text-yellow-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+						</div>
+						<h3 class="text-xl font-bold text-qipi-ink-black mb-3">Capital de Impacto</h3>
+						<p class="text-sm text-gray-600 mb-4 font-semibold">Donantes / ONGs</p>
+						<p class="text-sm text-gray-500 leading-relaxed">
+							Cimientos para la sostenibilidad. Fortalecimiento de la infraestructura tecnológica y educativa.
+						</p>
+					</div>
+
+					<!-- Card 4: Aliados Estratégicos -->
+					<div class="bg-qipi-white-2 p-8 rounded-2xl border border-gray-100 hover:border-qipi-light-blue hover:shadow-xl transition-all duration-300 group">
+						<div class="w-14 h-14 bg-purple-100/50 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+							<svg class="w-8 h-8 text-purple-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path></svg>
+						</div>
+						<h3 class="text-xl font-bold text-qipi-ink-black mb-3">Aliados de Visibilidad</h3>
+						<p class="text-sm text-gray-600 mb-4 font-semibold">Medios y Empresas</p>
+						<p class="text-sm text-gray-500 leading-relaxed">
+							Visibilidad y respaldo. Posicionando la innovación rural y generando movimientos de cambio.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Benefits Section -->
+		<section id="beneficios" class="py-24 bg-qipi-white-2 relative overflow-hidden">
+			<!-- Decorative background elements -->
+			<div class="absolute -left-20 top-1/2 w-96 h-96 bg-qipi-light-blue/20 rounded-full filter blur-3xl"></div>
+			
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+				<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+					<div>
+						<h2 class="text-3xl md:text-4xl font-bold text-qipi-ink-black mb-6">Innovación desde el Campo,<br>Para el Mundo</h2>
+						<p class="text-lg text-gray-600 mb-8">
+							QIPI no es solo una app, es el sistema operativo de la confianza comunal. Digitalizamos lo que ya existe para potenciarlo.
+						</p>
+						
+						<ul class="space-y-6">
+							<li class="flex items-start">
+								<div class="flex-shrink-0 w-8 h-8 rounded-full bg-qipi-ink-black flex items-center justify-center mt-1">
+									<svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+								</div>
+								<div class="ml-4">
+									<h4 class="text-lg font-bold text-qipi-ink-black">Reducción de Riesgos</h4>
+									<p class="text-sm text-gray-500">Registros digitales inmutables que disminuyen errores y previenen la morosidad.</p>
+								</div>
+							</li>
+							<li class="flex items-start">
+								<div class="flex-shrink-0 w-8 h-8 rounded-full bg-qipi-ink-black flex items-center justify-center mt-1">
+									<svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+								</div>
+								<div class="ml-4">
+									<h4 class="text-lg font-bold text-qipi-ink-black">Retorno Social</h4>
+									<p class="text-sm text-gray-500">Créditos justos (1%) que fortalecen economías locales y cierran brechas digitales.</p>
+								</div>
+							</li>
+							<li class="flex items-start">
+								<div class="flex-shrink-0 w-8 h-8 rounded-full bg-qipi-ink-black flex items-center justify-center mt-1">
+									<svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+								</div>
+								<div class="ml-4">
+									<h4 class="text-lg font-bold text-qipi-ink-black">Escalabilidad</h4>
+									<p class="text-sm text-gray-500">Una "cooperativa de cooperativas" diseñada para expandirse regional y globalmente.</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="relative">
+						<!-- Placeholder for app screenshot or related image -->
+						<div class="aspect-square bg-gradient-to-tr from-qipi-blue-slate to-qipi-light-blue rounded-3xl shadow-2xl flex items-center justify-center p-8 transform rotate-3 hover:rotate-0 transition-all duration-500">
+							<div class="bg-white/10 backdrop-blur-lg w-full h-full rounded-2xl border border-white/20 p-6 flex flex-col items-center justify-center text-white">
+								<span class="text-6xl mb-4">📱</span>
+								<p class="text-center font-bold text-xl">Gestión simple por WhatsApp</p>
+								<p class="text-center text-sm opacity-80 mt-2">"La abuela Juana ahora administra sus ahorros desde su chacra."</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- CTA Wrapper -->
+		<section class="py-20 bg-qipi-ink-black text-center px-4">
+			<h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Sé parte del cambio</h2>
+			<p class="text-qipi-light-blue text-xl mb-10 max-w-2xl mx-auto">Únete a la campaña "Aquí Nace" y ayúdanos a recaudar los fondos para los próximos 3 meses de operación.</p>
+			<a href="/grow-funding" class="inline-block px-10 py-5 bg-qipi-light-blue text-qipi-ink-black font-bold rounded-full text-lg shadow-lg hover:shadow-xl hover:bg-white transition-all transform hover:-translate-y-1">
+				Ver Campaña Aquí Nace
+			</a>
+		</section>
+	</main>
+	<Footer />
 </Layout>

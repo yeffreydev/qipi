@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  --color-qipi-light-blue: #BCD6D9;
+  --color-qipi-ink-black: #0C1922;
+  --color-qipi-white: #FEFEFF;
+  --color-qipi-blue-slate: #526687;
+  --color-qipi-white-2: #F8FDFF;
+
+  --font-qipi: 'Outfit', sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--color-qipi-white-2);
+  color: var(--color-qipi-ink-black);
+}

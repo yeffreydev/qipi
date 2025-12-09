@@ -1,0 +1,33 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-qipi-ink-black text-qipi-white py-12 mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="font-qipi font-bold text-xl mb-4">QIPI</h3>
+                <p class="text-qipi-light-blue text-sm">
+                    La infraestructura financiera cooperativa que transforma la confianza en capital social.
+                </p>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-4">Enlaces</h4>
+                <ul class="space-y-2 text-sm text-gray-300">
+                    <li><a href="/" class="hover:text-qipi-light-blue transition-colors">Inicio</a></li>
+                    <li><a href="/grow-funding" class="hover:text-qipi-light-blue transition-colors">Campaña Aquí Nace</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-4">Contacto</h4>
+                <p class="text-sm text-gray-300">
+                    Montes y Vegas, Cajamarca, Perú<br>
+                    contacto@qipi.pe
+                </p>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 mt-8 pt-8 text-center text-xs text-gray-500">
+            &copy; {currentYear} Qipi. Todos los derechos reservados.
+        </div>
+    </div>
+</footer>
