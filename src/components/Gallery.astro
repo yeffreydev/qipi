@@ -1,0 +1,93 @@
+---
+interface Props {
+    limit?: number;
+}
+
+const { limit } = Astro.props;
+
+const allImages = [
+    "IMG_0221.webp",
+    "IMG_0284.webp",
+    "IMG_20200318_095954.webp",
+    "IMG_20201120_172316709.webp",
+    "IMG_20211215_140457.webp",
+    "IMG_2691.webp",
+    "IMG_2692.webp",
+    "IMG_2699.webp",
+    "IMG_2737.webp",
+    "IMG_2776.webp",
+    "IMG_3533.webp",
+    "IMG_3695.webp",
+    "IMG_6106.webp",
+    "IMG_9016.webp",
+];
+
+const images = limit ? allImages.slice(0, limit) : allImages;
+---
+
+<section id="galeria" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-5xl font-bold text-qipi-ink-black mb-4">
+                Nuestra Comunidad en Acción
+            </h2>
+            <p class="text-lg text-gray-500 max-w-2xl mx-auto">
+                Momentos que capturan la esencia de la innovación rural y el
+                impacto real en nuestras comunidades.
+            </p>
+        </div>
+
+        <div
+            class="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-4 space-y-4"
+        >
+            {
+                images.map((img) => (
+                    <div class="gallery-item break-inside-avoid relative group overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 bg-gray-50 border border-gray-100/50">
+                        <!-- Skeleton Loader -->
+                        <div class="skeleton-loader absolute inset-0 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 animate-shimmer" style="background-size: 200% 100%;"></div>
+                        
+                        <img
+                            src={`/gallery/${img}`}
+                            alt="Gallery Image"
+                            class="gallery-img w-full h-auto block transform group-hover:scale-105 transition-all duration-700 opacity-0 relative z-1"
+                            loading="lazy"
+                            onload="this.classList.remove('opacity-0'); this.parentElement.querySelector('.skeleton-loader')?.remove();"
+                        />
+                        <div class="absolute inset-0 bg-gradient-to-t from-qipi-ink-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6 z-2">
+                            <span class="text-white text-sm font-medium tracking-wide">
+                                Qipi • Comunidad
+                            </span>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+
+<style>
+    @keyframes shimmer {
+        0% { background-position: -200% 0; }
+        100% { background-position: 200% 0; }
+    }
+    .animate-shimmer {
+        animation: shimmer 2s infinite linear;
+    }
+    /* Fallback height for masonries while loading to avoid total collapse */
+    .gallery-item {
+        /* Removed min-height to allow items to perfectly fit any aspect ratio */
+    }
+</style>
+
+        {
+            limit && (
+                <div class="mt-16 text-center">
+                    <a
+                        href="/gallery"
+                        class="inline-block px-10 py-4 bg-qipi-ink-black text-white font-bold rounded-full hover:bg-opacity-90 shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-1"
+                    >
+                        Ver Más Momentos
+                    </a>
+                </div>
+            )
+        }
+    </div>
+</section>
